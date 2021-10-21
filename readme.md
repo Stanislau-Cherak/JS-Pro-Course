@@ -5,7 +5,7 @@
 **type:** educational project (Front End)
 ```javascript
 function sayHello () {
-alert('Hello word');
+alert('Hello world');
 };
 ```
 **School: [TeachMeSkills](https://teachmeskills.by)**
