@@ -1,5 +1,5 @@
 ## JS-Pro-Course
-------
+
 **autor: [Stanislav Cherak](https://github.com/Stanislav-Cherak)**
 
 **type:** educational project (Front End)
