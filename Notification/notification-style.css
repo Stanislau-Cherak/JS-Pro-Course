@@ -1,0 +1,67 @@
+.notification-component {
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    max-width: 450px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: burlywood;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.notification-component_header {
+    text-align: end;
+    margin-bottom: 15px;
+}
+
+.notification-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: white;
+    transition: all .3s ease-out;
+}
+
+.notification-button:hover, :focus {
+    color: white;
+    background-color: black;    
+}
+
+.notification-button:disabled {
+    color: gray;
+    background-color: white;
+    cursor: auto;    
+}
+
+
+.notification-component_body {
+    margin-bottom: 25px;   
+}
+
+.notification-component_text {
+   height: 100px;
+    overflow-y: auto;
+}
+
+.notification-component_title {
+    height: auto;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.notification-form_check {
+    font-size: 20px;
+}
+
+.notification-form-check_label {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.notification-form-radio_input {
+    margin: 5px;
+}
+
