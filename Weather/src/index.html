@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="./scss/main.scss">
+    <title>Weather</title>
+</head>
+
+<body>
+
+    <div class='wrapper'>
+        <div class="main">
+            <div class='container'>
+
+                <div class="submit-section">
+                    <form name='city-form' action="#" autocomplete="on">
+                        <input id="city" type="text" placeholder="Enter your city">
+                        <input id='country' type="text" placeholder="Enter your country">
+                        <input id="submit-button" type="submit" value="Submit">
+                    </form>
+                </div>
+
+                <div class="weather-section">
+                    <div class="weather-section-image"></div>
+                    <div class="weather-section-temperature">
+                        <p class="current-temperature">0</p>
+                        <p class='celsius'>&deg C</p>
+                    </div>
+                    <div class="weather-section-location">
+                        <p class='location'>Not selected</p>
+                    </div>
+
+                    <div class="weather-section-items">
+
+                        <div class='weather-section-item'>
+                            <div class="weather-section-item-row">
+                                <p class="weather-section-item-text">Time:</p>
+                                <div class="weather-section-item-icon time-icon"></div>
+                                <p class="weather-section-item-value current-time-value"></p>
+                            </div>
+
+
+                            <div class="weather-section-item-row">
+                                <p class="weather-section-item-text">Wind direction:</p>
+                                <div class="weather-section-item-icon wind-direction-icon"></div>
+                                <p class="weather-section-item-value current-wind-direction-value"></p>
+                            </div>
+
+
+                        </div>
+
+                        <div class='weather-section-item'>
+                            <div class="weather-section-item-row">
+                                <p class="weather-section-item-text">Feels like:</p>
+                                <div class="weather-section-item-icon feels-like-icon"></div>
+                                <p class="weather-section-item-value current-feels-like-value"></p>
+                            </div>
+
+                            <div class="weather-section-item-row">
+                                <p class="weather-section-item-text">Wind speed:</p>
+                                <div class="weather-section-item-icon wind-speed-icon"></div>
+                                <p class="weather-section-item-value current-wind-speed-value"></p>
+                            </div>
+                        </div>
+
+                        <div class='weather-section-item'>
+                            <div class="weather-section-item-row">
+                                <p class="weather-section-item-text today">Today is</p>
+                                <p class="weather-section-item-value current-today-is-value"></p>
+                            </div>
+                            <div class="weather-section-item-row">
+                                <p class="weather-section-item-text">Pressure:</p>
+                                <div class="weather-section-item-icon pressure-icon"></div>
+                                <p class="weather-section-item-value current-pressure-value"></p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <a href="#" class="autor-link" title='Stanislav Cherak'>Design by Stanislav Cherak</a>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
