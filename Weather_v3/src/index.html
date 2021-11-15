@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="./scss/main.scss">
+    <title>Weather</title>
+</head>
+
+<body>
+    <main>
+        <div class='wrapper'>
+            <div class='container'>
+                <div class="submit-section">
+                    <input id="city" type="text" class='submit-section_location' placeholder="Enter your city">
+                    <input id="submit-button" type="button" class="button" value="Submit">
+                    <input id='country' type="text" class='submit-section_location' placeholder="Enter your country">
+                    <input id="show-button" type="button" class="button" value="My weather">
+                    <input id="history-button" type="button" class="button" value="Show history">
+                </div>
+                <div class="weather-section">
+                    <div class="weather-section-image"></div>
+                    <div class="weather-section-temperature">
+                        <p class="current-temperature">0</p>
+                        <p class='celsius'>&deg C</p>
+                    </div>
+                    <div class="weather-section-location">
+                        <p class='location'>Not selected</p>
+                    </div>
+                    <div class="weather-section-conditions">
+                        <p class="weather-section_text">Current time:</p>
+                        <p class="current-time-value value"></p>
+                        <p class="weather-section_text">Wind direction:</p>
+                        <p class="current-wind-direction-value value"></p>
+                        <p class="weather-section_text">Feels like:</p>
+                        <p class="current-feels-like-value value"></p>
+                        <p class="weather-section_text">Wind speed:</p>
+                        <p class="current-wind-speed-value value"></p>
+                        <p class="weather-section_text">Today is</p>
+                        <p class="current-today-is-value value"></p>
+                        <p class="weather-section_text">Pressure:</p>
+                        <p class="current-pressure-value value"></p>
+                    </div>
+                </div>
+                <a href="#" class="autor-link" title='Stanislav Cherak'>Design by Stanislav Cherak</a>
+            </div>
+        </div>
+    </main>
+    <div id='main-modal' class="modal bg-modal">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close-button"></div>
+                </div>
+                <div class='modal-body'>
+                    <div class='modal-body_head'>
+                        <p class="modal-body_text">Location</p>
+                        <p class="modal-body_time modal-body_icon"></p>
+                        <p class="modal-body_wind-direction modal-body_icon"></p>
+                        <p class="modal-body_feels-like modal-body_icon"></p>
+                        <p class="modal-body_wind-speed modal-body_icon"></p>
+                        <p class="modal-body_text">Today is</p>
+                        <p class="modal-body_pressure modal-body_icon"></p>
+                    </div>
+                    <div class='modal-body_content'>
+
+                    </div>
+
+                </div>
+                <div class='modal-footer'>
+                    <p class="modal-button clear-button">Clear</p>
+                    <p class="modal-button ok-button">Ok</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='alert-modal' class="modal sm-modal">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="close-button"></div>
+                </div>
+                <div class='modal-body'>
+                    <p class="modal-body-text">
+                    </p>
+                </div>
+                <div class='modal-footer'>
+                    <p class="modal-button ok-button">I understood</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
