@@ -1,0 +1,266 @@
+@import "reset.scss";
+@import "variables.scss";
+@import "fonts.scss";
+
+body.lock{
+    overflow: hidden;
+}
+
+.wrapper {
+    min-width: 100%;
+    min-height: 100vh;
+    font-family: $FontJura;
+    color: $ColorGray;
+    text-align: center;
+    background: url('../image/weather.png') center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    @media (max-width:1060px) {
+        min-height: 120vh;        
+    } 
+    .container {
+        max-width: 1170px;
+        padding: 50px 15px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+.submit-section {
+    display: grid;
+    grid-template-columns:  repeat(4,1fr);
+    grid-template-rows:  repeat(4,1fr);
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 100px;
+    &_location {
+        font-size: calc(10px + 1vw);
+        align-self: stretch;
+        padding: 0 15px;
+        font-family: $FontJura;
+        font-weight: 700;
+        resize: none;
+        overflow: auto;
+        -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    }
+    #city {
+        grid-row: 1;
+        grid-column: 1 / span 3;
+        text-align: center;
+    }
+    #country {
+        grid-row: 2;
+        grid-column: 1 / span 3;
+        text-align: center;
+    }
+    #history-button {
+        grid-row: 3;
+        grid-column: 4;
+        text-align: center;
+    }
+    .button {
+        padding: 10px 20px;
+        font-family: $FontJura;
+        font-size: calc(10px + 1vw);
+        cursor: pointer;
+        color: $ColorWhite;
+        background-color: $ColorRed;
+        border-radius: 5px;
+        transition: all 0.5s ease 0s;
+        &:hover, :focus {
+             background: $ColorBlack;
+        }
+        &:disabled {
+            color: gray;
+            background-color: white;
+            cursor: auto;    
+        }
+    }
+}
+
+.weather-section {
+    flex:1 1 auto;
+    padding: 25px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: $ColorBlack;
+    background-color: $ColorBigMask;
+    margin-bottom: 50px;    
+    &-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden; 
+        margin-bottom: 35px;
+    }
+    &-temperature {
+        font-size: 42px;
+        color: $ColorRed;
+        margin-bottom: 35px;
+        font-weight: 700;
+        .current-temperature, .celsius {
+            display: inline;
+        }
+    }
+    &-location {
+        font-size: 30px;
+        margin-bottom: 50px;
+        font-weight: 700;
+    }
+    &-conditions {
+        display: grid;
+        grid-template-columns:  repeat(6,1fr);
+        grid-template-rows:  repeat(2,1fr);
+        gap: 10px;
+        align-items: center;
+        font-size: 18px;
+        @media (max-width:550px) {
+            grid-template-columns:  repeat(4,1fr);
+            grid-template-rows:  repeat(3,1fr);
+        } 
+    }
+    &_text, .value {
+        text-align: start;
+    }   
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.5s ease 0s;
+    &-wrapper {
+        min-height: 100vh;
+        padding: 30px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .modal-content {
+            background-color: $ColorWhite;
+            padding: 30px;
+            font-family: $FontJura;
+            border-radius: 15px;
+            max-width: 1200px;
+            @media (max-width:550px) {
+                padding: 10px;
+            }
+            .modal-header {
+                text-align: end;
+                margin-bottom: 15px;
+                .close-button {
+                    display: inline-block;
+                    background: $ColorRed;
+                    cursor: pointer;
+                    width: 30px;
+                    height: 30px;
+                    text-align: end;
+                    mask-size: 30px 30px;
+                    mask-repeat:no-repeat;
+                    mask-image: url('../image/close.svg');                    
+                    transition: all 0.5s ease 0s;
+                        &:hover {
+                             background: $ColorBlack                            
+                        }
+                    }                      
+            }
+            .modal-body {
+                margin-bottom: 25px;
+                &_head {
+                    display: grid;
+                    grid-template-columns:  repeat(7,1fr);
+                    grid-template-rows:  repeat(1,1fr);
+                    gap: 10px;
+                    align-items: center;                   
+                }
+                &_content {
+                    margin-top: 25px;
+                    &-row {
+                        display: grid;
+                        grid-template-columns:  repeat(7,1fr);
+                        grid-template-rows:  repeat(1,1fr);
+                        gap: 10px;
+                        align-items: center;
+                        margin-bottom: 10px;                        
+                    } 
+                }
+                &_text {
+                    text-align: center;
+                    font-size: calc(10px + 0.5vw);
+                    font-weight: 700;
+                }
+                &_icon {
+                    background: $ColorBlack;
+                    margin: auto;
+                    width: 30px;
+                    height: 30px;
+                    text-align: end;
+                    mask-size: 30px 30px;
+                    mask-repeat:no-repeat;
+                    @media (max-width:550px) {
+                        mask-size: 20px 20px;
+                    }
+                }
+                &_time {
+                    mask-image: url('../image/time.svg');                    
+                }  
+                &_wind-direction {
+                    mask-image: url('../image/wind-direction.svg');                    
+                } 
+                &_feels-like {
+                    mask-image: url('../image/temperature-fill.svg');                    
+                }
+                &_wind-speed {
+                    mask-image: url('../image/wind-speed.svg');                    
+                }
+                &_pressure {
+                    mask-image: url('../image/pressure.svg');                    
+                }     
+            }
+            .modal-footer {
+                display: flex;
+                justify-content: end;
+                .modal-button {
+                    margin-left: 25px;
+                    padding: 10px 30px;
+                    font-size: 18px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    color: $ColorWhite;
+                    transition: all 0.5s ease 0s;
+                        &:hover {
+                             background: $ColorBlack                            
+                        }
+                }
+                .clear-button {
+                    background-color: $ColorGreen;
+                }
+                .ok-button {
+                    background-color: $ColorRed;
+                }
+            }
+        }
+    }
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+}
