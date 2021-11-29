@@ -11,9 +11,9 @@ const Clicker = () => {
         <div className='clicker'>
             <div className='clicker-result'>{number}</div>
             <div className='clicker-buttons'>
-                <Button children='' className='increment-button' disabled={false} onClick={()=>setNumber(number+1)} />
-                <Button children='' className='reset-button' disabled={false} onClick={()=>setNumber(0)} />
-                <Button children='' className='decrement-button' disabled={false} onClick={()=>setNumber(number-1)} />
+                <Button className='increment-button' onClick={()=>setNumber(number+1)} />
+                <Button className='reset-button' onClick={()=>setNumber(0)} />
+                <Button className='decrement-button' onClick={()=>setNumber(number-1)} />
             </div>
         </div>
     );

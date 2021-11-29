@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import './Button.scss';
 
-const Button = ({ children, onClick, className, disabled, ...attrs }) => {
+const Button = ({ onClick, className, disabled = false, ...attrs }) => {
 
     const finaleClass = classNames('button', className);
 
@@ -12,8 +12,8 @@ const Button = ({ children, onClick, className, disabled, ...attrs }) => {
             {...attrs}
             className={finaleClass}
             disabled={disabled}
-            onClick={onClick}
-        >{children}</button>
+            onClick={onClick}>
+        </button>
     );
 };
 
