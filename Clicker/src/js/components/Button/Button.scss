@@ -1,0 +1,74 @@
+.button {
+    flex: 1 1 33.3%;    
+    position: relative;
+    font-size: 24px;
+    font-weight: 700;
+    transition: all 0.5s ease 0s;        
+}
+
+.increment-button {
+    background: #00FF00;
+    &:hover, :focus {
+        background: #006400;
+   }
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        mask-size: 30px 30px;
+        mask-position: center;
+        mask-repeat:no-repeat;
+        background-color: white;
+        mask-image: url('./increment.svg');
+    }                
+}
+
+.decrement-button {
+    background-color: LightCoral;
+    &:hover, :focus {
+        background: DarkRed;
+   }
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        mask-size: 30px 30px;
+        mask-position: center;
+        mask-repeat:no-repeat;
+        background-color: white;
+        mask-image: url('./decrement.svg');
+    }   
+}
+
+.reset-button {
+    background-color: Khaki;
+    &:hover, :focus {
+        background: Gold;
+   }
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        mask-size: 30px 30px;
+        mask-position: center;
+        mask-repeat:no-repeat;
+        background-color: black;
+        mask-image: url('./reset.svg');
+    }    
+}
+
