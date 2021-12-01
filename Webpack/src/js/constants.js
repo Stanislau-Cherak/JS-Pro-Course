@@ -1,0 +1,12 @@
+export const DOC = document;
+export const API_KEY = 'ba84bfbee5907b5ad2b7fa81a316705c';
+export const MAIN_MODAL = DOC.getElementById('main-modal');
+export const ALERT_MODAL = DOC.getElementById('alert-modal');
+export const CITY = DOC.getElementById('city');
+export const COUNTRY = DOC.getElementById('country');
+export const SUBMIT = DOC.getElementById('submit-button');
+export const MY_LOCATION = DOC.getElementById('show-button');
+export const HISTORY = DOC.getElementById('history-button');
+export const CLOSE_BUTTONS = DOC.querySelectorAll('.close-button');
+export const OK_BUTTONS = DOC.querySelectorAll('.ok-button');
+export const CLEAR = DOC.querySelector('.clear-button');
