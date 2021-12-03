@@ -5,7 +5,7 @@ import './Select.scss';
 const Select = ({ title, options, onChange }) => {
 
     const handlerSelectChange = (event) => {
-        onChange(event.target.value);
+        onChange(Number(event.target.value));
     }
 
     return (
