@@ -1,0 +1,11 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    .input-section {
+        margin: 100px 0px 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
