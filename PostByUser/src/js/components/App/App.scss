@@ -1,0 +1,44 @@
+.wrapper {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 100px auto 0px;
+}
+
+.loading-bar_wrapper {
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+	z-index: 99;
+	background-color: white;   
+}
+
+.show-button {
+    background: darkblue;
+    margin: 25px auto;
+    &:hover, :focus {
+        background: Magenta;
+    }
+}
+
+.close-button, .icon-button {
+    margin: 0 15px;
+    background: Magenta;
+    &:hover, :focus {
+        background: darkblue;
+    }
+}
+
+.autor-link {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0px;
+        color: Magenta;
+        font-weight: 700;
+        font-style: normal;
+        text-transform: uppercase;
+        text-align: left;
+    background-color: white;
+}
