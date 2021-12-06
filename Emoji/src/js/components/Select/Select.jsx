@@ -2,15 +2,16 @@ import React from "react";
 
 import './Select.scss';
 
-const Select = ({ title, options, onChange }) => {
+const Select = ({ title, value, options, onChange }) => {
 
     const handlerSelectChange = (event) => {
         onChange(Number(event.target.value));
     }
 
     return (
-        <select className='select' value={title} onChange={handlerSelectChange}>
-            <option defaultValue="10" disabled>{title}</option>
+        <div className='select'>
+        <p className='select-title'>{title}</p>
+        <select className='select-main' value={value} onChange={handlerSelectChange}>
             {
                 options.map((option, index) => {
                     return (
@@ -19,6 +20,7 @@ const Select = ({ title, options, onChange }) => {
                 })
             }
         </select>
+        </div>
     )
 }
 

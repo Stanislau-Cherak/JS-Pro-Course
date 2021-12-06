@@ -8,12 +8,10 @@ const EmojiContainer = ({ emoji, number }) => {
     return (
         <ul className='emoji-list'>
             {
-                emoji.map((emo, index) => {
-                    if (index < number) {
-                        return (
-                            <EmojiRow key={emo.title} emo={emo} />
-                        )
-                    }
+                emoji.slice(0, number).map((emo, index) => {
+                    return (
+                        <EmojiRow key={emo.title} emo={emo} />
+                    )
                 })
             }
         </ul>
@@ -21,4 +19,3 @@ const EmojiContainer = ({ emoji, number }) => {
 }
 
 export default EmojiContainer;
-

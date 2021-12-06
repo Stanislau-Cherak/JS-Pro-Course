@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Form.scss';
 
-const Form = ({ onChange }) => {
+const Form = ({ value, onChange }) => {
 
     const handlerInputChange = (event) => {
         onChange(event.target.value);
@@ -14,6 +14,7 @@ const Form = ({ onChange }) => {
                 type='text'
                 placeholder='search emoji'
                 className='search_input'
+                value={value}
                 onChange={handlerInputChange}
             />
         </div>
