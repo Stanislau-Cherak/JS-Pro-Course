@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Emoji from '../../../emojiList.json';
+import emoji from '../../../emojiList.json';
 
 import Form from '../Form/Form.jsx';
 import Select from '../Select/Select.jsx';
@@ -21,21 +21,17 @@ const App = () => {
         setNumberOfEmoji(numberOfEmoji);
     }
 
-    const filteredEmoji = Emoji.filter((emo) => {
+    const filteredEmoji = emoji.filter((emo) => {
         return emo.title.toLowerCase().includes(inputValue.toLowerCase()) || emo.keywords.toLowerCase().includes(inputValue.toLowerCase())
     })
 
     return (
         <div className='wrapper'>
             <div className='input-section'>
-
                 <Form value={inputValue} onChange={handlerInputChange} />
                 <Select title={'Emojis on page'} value={numberOfEmoji} options={[10, 20, 50]} onChange={handlerSelectChange} />
-
             </div>
-
             <EmojiContainer emoji={filteredEmoji} number={numberOfEmoji} />
-
         </div>
     );
 };
