@@ -13,7 +13,6 @@ const Card = ({ userId, title, text, autor, onClick }) => {
     return (
         <div className='card'>
             <div className='card-img_top'>
-                <img src={Avatar} alt='autor' />
             </div>
             <div className='card-body'>
                 <h5 className='card_title'>{title}</h5>

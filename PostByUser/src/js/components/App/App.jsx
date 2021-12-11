@@ -13,44 +13,45 @@ const App = () => {
     const [posts, setPosts] = useState([]);
     const [numberOfPosts, setNumberOfPosts] = useState(5);
     const [users, setUsers] = useState([]);
-    const [isBusy, setIsBusy] = useState(false);
-    const [modalIsOpen, setModalIsOpen]=useState(false);
-    const [activeUser, setActiveUser]=useState(0);
+    const [isBusy, setIsBusy] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [activeUser, setActiveUser] = useState(0);
 
     const handlerShowMore = () => {
         setNumberOfPosts(numberOfPosts + 5)
     }
 
-    const handleOpenModal=(userId)=>{
-        setActiveUser(userId);
-        setModalIsOpen(true);
-    }
-
-    const handleCloseModal=()=>{
-        setModalIsOpen(false);
+    const handleToggleModal = (userId) => {
+        if (userId) {
+            setActiveUser(userId);
+        }
+        setIsModalOpen(!isModalOpen);
     }
 
     useEffect(async () => {
-        setIsBusy(true)
-        const posts = await (await fetch('https://jsonplaceholder.typicode.com/posts')).json();
-        setPosts(posts)
-        const users = await (await fetch(' https://jsonplaceholder.typicode.com/users')).json();
-        setUsers(users)
-        setIsBusy(false)
+
+        const usersPromise = fetch(' https://jsonplaceholder.typicode.com/users');
+        const postsPromise = fetch('https://jsonplaceholder.typicode.com/posts');
+
+        Promise.all([usersPromise, postsPromise])
+            .then(async ([usersData, postsData]) => {
+                const users = await usersData.json();
+                const posts = await postsData.json();
+                setPosts(posts)
+                setUsers(users)
+                setIsBusy(false)
+            });
     }, [])
 
     return (
         <div className='wrapper'>
-
             {isBusy
                 ? <LoadingBar className='loading-bar_wrapper' />
                 : <div>
-                    < CardSection posts={posts} users={users} numberOfCards={numberOfPosts} modalOpen={handleOpenModal} />
+                    < CardSection posts={posts} users={users} numberOfCards={numberOfPosts} onModalOpen={handleToggleModal} />
                     <Button className='show-button' disabled={false} onClick={handlerShowMore}>Show more</Button>
-                    <Modal isOpen={modalIsOpen} user={users[activeUser]} onClose={handleCloseModal} />
+                    {isModalOpen && <Modal user={users[activeUser]} onClose={handleToggleModal} />}
                 </div>}
-                
-                
         </div>
     )
 };

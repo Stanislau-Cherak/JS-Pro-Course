@@ -44,3 +44,11 @@
         }       
     }
 }
+
+.close-button, .icon-button {
+    margin: 0 15px;
+    background: Magenta;
+    &:hover, :focus {
+        background: darkblue;
+    }
+}
