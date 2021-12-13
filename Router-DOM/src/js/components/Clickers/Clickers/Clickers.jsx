@@ -9,12 +9,10 @@ const Clickers = () => {
 
     const navigate = useNavigate();
     const { number } = useParams();
-    const [numberOfClickers, setNumberOfClickers] = useState(0);
-
-    console.log(number)
+    const [numberOfClickers, setNumberOfClickers] = useState(Number(number) || 0);
 
     const handlerInputChange = (event) => {
-        const tempNumber=Number(event.target.value);
+        const tempNumber = Number(event.target.value);
         setNumberOfClickers(tempNumber);
         navigate(`/Clickers/${tempNumber}`)
     }

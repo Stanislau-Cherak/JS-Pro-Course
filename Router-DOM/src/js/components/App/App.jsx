@@ -14,13 +14,15 @@ function App() {
         <>
             <header>
                 <Link to='/'>Home</Link>
-                <Link to='/Clickers/0'>Clickers</Link>
+                <Link to='/Clickers'>Clickers</Link>
                 <Link to='/Emoji'>Emoji</Link>
                 <Link to='/PostByUser'>PostByUser</Link>
             </header>
             <Routes>
                 <Route path='/' element={<Homepage />} />
-                <Route path='/Clickers/:number' element={< Clickers />} />
+                <Route path='/Clickers' element={< Clickers />}>
+                    <Route path='/Clickers/:number' element={< Clickers />} />
+                </Route>
                 <Route path='/Emoji' element={<Emoji />} />
                 <Route path='/PostByUser' element={<PostByUser />} />
                 <Route path='*' element={<Notfoundpage />} />
