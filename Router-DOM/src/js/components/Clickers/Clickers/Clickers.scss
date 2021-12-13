@@ -1,0 +1,26 @@
+.clickers_wrapper {
+    max-width: 1200px;
+    margin: 150px auto 100px;
+    .input_section {
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        margin-bottom: 50px;
+        .input_title {
+            margin: 0 15px;
+        }
+        .input_number {
+            margin: 0 15px;
+            font-size: 1.5rem;
+            padding: 5px 15px;
+            border: 1px solid #2C2C32;
+            border-radius: 5px;
+            resize: none;
+            overflow: auto;            
+        }
+    }
+    .clickers {
+        display: flex;
+        flex-wrap: wrap;
+    }   
+}
