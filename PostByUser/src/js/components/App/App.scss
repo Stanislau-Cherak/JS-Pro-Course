@@ -1,0 +1,13 @@
+.wrapper {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 100px auto 0px;
+}
+
+.show-button {
+    background: darkblue;
+    margin: 25px auto;
+    &:hover, :focus {
+        background: Magenta;
+    }
+}
