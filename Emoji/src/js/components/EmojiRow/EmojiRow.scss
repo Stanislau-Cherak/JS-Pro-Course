@@ -1,0 +1,21 @@
+.emoji-row {
+    width: 70%;
+    display: flex;
+    padding: 10px 15px;
+    margin: 0px 15px 25px;
+    border-radius: 5px;
+    border: 2px solid gray;
+    &_img {
+        display: block;
+        margin: 0px 50px 0px 15px;
+    }
+    &_title{
+        display: block;
+        font-size: 24px;
+        color: gray;
+        margin: 0 15px;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        align-self: center;
+    }
+}
