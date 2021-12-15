@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import Clicker from '../Clicker/Clicker.jsx';
@@ -11,10 +11,12 @@ const Clickers = () => {
     const { number } = useParams();
     const [numberOfClickers, setNumberOfClickers] = useState(Number(number) || 0);
 
+    useEffect(() => {
+        setNumberOfClickers(Number(number) || 0);
+    }, [number])
+
     const handlerInputChange = (event) => {
-        const tempNumber = Number(event.target.value);
-        setNumberOfClickers(tempNumber);
-        navigate(`/Clickers/${tempNumber}`)
+        navigate(`/Clickers/${Number(event.target.value)}`)
     }
 
     return (

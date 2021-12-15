@@ -12,12 +12,14 @@ import './App.scss';
 function App() {
     return (
         <>
+            <nav>
             <header>
                 <Link to='/'>Home</Link>
                 <Link to='/Clickers'>Clickers</Link>
                 <Link to='/Emoji'>Emoji</Link>
                 <Link to='/PostByUser'>PostByUser</Link>
             </header>
+            </nav>            
             <Routes>
                 <Route path='/' element={<Homepage />} />
                 <Route path='/Clickers' element={< Clickers />}>

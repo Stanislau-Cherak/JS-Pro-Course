@@ -7,7 +7,8 @@ module.exports = merge(commonConfig, {
   devtool: 'inline-source-map',
   devServer: {
     port: 4200,
-    hot: true
+    hot: true,
+    historyApiFallback: true,
   },
   plugins: [
     new HTMLWebpackPlugin({

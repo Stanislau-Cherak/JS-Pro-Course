@@ -1,13 +1,15 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: {
         main: './js/index.jsx',
-    },    
+    },
+    output: {
+        publicPath: '/'
+    },       
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
