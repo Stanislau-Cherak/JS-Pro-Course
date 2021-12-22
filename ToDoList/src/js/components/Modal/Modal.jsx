@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from '../Button/Button.jsx';
 
-import { getCurrentDate } from '../../functions/getCurrentDate.js';
+import { getCurrentDate } from '../../helpers/getCurrentDate.js';
 
 import './Modal.scss';
 

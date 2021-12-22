@@ -1,25 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getUniqueId } from '../../functions/getUniqueId.js';
+import { getUniqueId } from '../../helpers/getUniqueId.js';
 
-let localInitialState = [];
-
-if ('ToDoStore' in localStorage) {
-    localInitialState = JSON.parse(localStorage.getItem('ToDoStore'));
-}
+let localStoreInitialState = [];
 
 const toDoSlice = createSlice({
     name: 'TODO',
-    initialState: localInitialState,
+    initialState: localStoreInitialState,
     reducers: {
         addToDo(state, action) {
             state.push({ ...action.payload, id: getUniqueId() });
-            localStorage.setItem('ToDoStore', JSON.stringify(state));
         },
         deleteToDo(state, action) {
-            const result = state.filter((item) => item.id !== action.payload)
-            localStorage.setItem('ToDoStore', JSON.stringify(result));
-            return result;
+            return state.filter((item) => item.id !== action.payload)
         },
         editToDo(state, action) {
             state.forEach((todo) => {
@@ -29,7 +22,6 @@ const toDoSlice = createSlice({
                     todo.title = action.payload.title;
                 }
             });
-            localStorage.setItem('ToDoStore', JSON.stringify(state));
         },
         changeToDoStatus(state, action) {
             state.forEach((todo) => {
@@ -37,7 +29,6 @@ const toDoSlice = createSlice({
                     todo.state = action.payload.state;
                 }
             });
-            localStorage.setItem('ToDoStore', JSON.stringify(state));
         }
     },
 });

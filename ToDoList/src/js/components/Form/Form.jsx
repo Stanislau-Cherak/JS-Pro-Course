@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Button from '../Button/Button.jsx';
-import { getCurrentDate } from '../../functions/getCurrentDate.js';
+import { getCurrentDate } from '../../helpers/getCurrentDate.js';
 
 import './Form.scss';
 
@@ -20,6 +20,9 @@ const Form = ({ onClick }) => {
             description: descriptionValue,
             state: 'active'
         })
+        setTitleValue('');
+        setDescriptionValue('');
+        setDate('');
     }
 
     return (
@@ -30,6 +33,7 @@ const Form = ({ onClick }) => {
                 id='toDo_title'
                 type='text'
                 placeholder='Enter new case'
+                value={titleValue}
                 onChange={(event) => setTitleValue(event.target.value)}
             />
 
@@ -39,6 +43,7 @@ const Form = ({ onClick }) => {
                 min={currentDate}
                 max='2121-01-01'
                 required
+                value={date}
                 onChange={(event) => setDate(event.target.value)}
             />
 
@@ -46,6 +51,7 @@ const Form = ({ onClick }) => {
                 id='toDo_description'
                 type='text'
                 placeholder='Enter a description of the case'
+                value={descriptionValue}
                 onChange={(event) => setDescriptionValue(event.target.value)}
             />
 

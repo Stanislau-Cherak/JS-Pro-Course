@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import { getState } from '../../helpers/getState.js';
+
 import Filter from '../Filter/Filter.jsx';
 import ToDoArea from '../../features/ToDo/ToDoArea.jsx';
 
@@ -9,7 +11,7 @@ import './App.scss';
 function App() {
 
     const [filter, setFilter] = useState('all');
-    const todos = useSelector((state) => state.toDo);
+    const todos = useSelector(getState);
     const numberAll = todos.length;
     const numberActive = todos.filter((todo) => todo.state === 'active').length;
     const numberDone = todos.filter((todo) => todo.state === 'done').length;
